@@ -1,0 +1,25 @@
+/* 公共样式 */
+/* 1 解决高度塌陷、外边距重叠 */
+.clearfix::before,
+.clearfix::after{
+    content: '';
+    display: table;
+    clear: both;
+}
+/* 去除超链接的下划线 */
+a{
+    text-decoration: none;
+    color: #333;
+}
+
+body{
+    font:14px/1.5 Helvetica Neue,Helvetica,Arial,Microsoft Yahei,Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei,sans-serif;
+    color: #333;
+}
+
+/* 表示中间容器宽度的类 */
+.w{
+    width: 1226px;
+    /* 容器居中 */
+    margin: 0 auto;
+}

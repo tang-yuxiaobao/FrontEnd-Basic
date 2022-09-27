@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        1 选择含有title的元素
+        2 选择title属性为abcdef的元素
+        3 选择title属性以abc开头的元素
+        4 选择title属性以abc结尾的元素
+        5 选择title属性中含有e的元素
+     -->
+    <style>
+        /* 1 */
+        p[title]{
+            color: blue;
+        }
+        /* 2 */
+        p[title=abcdef]{
+            color: aqua;
+        }
+        /* 3 */
+        p[title^=abc]{
+            color: blueviolet;
+        }
+        /* 4 */
+        p[title$=abc]{
+            font-size: 30px;
+        }
+        /* 5 */
+        p[title*=e]{
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="h">十一月四日风雨大作</h1>
+
+    <h2 class="h same">陆游</h2>
+    <p title="abc">僵卧孤村不自哀，</p>
+    <p title="abcdef">尚思为国戍轮台。</p>
+    <p title="hellabc">夜阑卧听风吹雨，</p>
+
+    <p id="last" class="same">铁马冰河入梦来。</p>
+</body>
+</html>

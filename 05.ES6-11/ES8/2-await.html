@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>await</title>
+</head>
+
+<body>
+    <script>
+        //创建 promise 对象
+        const p = new Promise((resolve, reject) => {
+            // resolve("用户数据");
+            reject("失败啦!");
+        })
+
+        // await 要放在 async 函数中.
+        async function main() {
+            try {
+                // await 右侧表达式为 promise 对象
+                let result = await p;  // 如果promise成功，result=成功的值；
+                //
+                console.log(result);
+            } catch (e) {
+                console.log(e);  // 如果promise失败，在 catch 语句中得到失败的结果e
+            }
+        }
+        //调用函数
+        main();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        1 将ul的第一个li设置为红色
+        2 将ul的最后一个li设置为紫色
+        3 将ul的奇数个li设置为绿色
+        4 将相同类型的第3个li设置30px
+        5 选中除第三个子元素以外的li设置背景颜色
+     -->
+    <style>
+        /* 1 */
+        ul > li:first-child{
+            color: red;
+        }
+        /* 2 */
+        ul > li:last-child{
+            color: purple;
+        }
+        /* 3 */
+        ul > li:nth-of-type(odd){
+            color: green;
+        }
+        /* 4 */
+        ul > li:nth-of-type(3){
+            font-size: 30px;
+        }
+        /* 5 */
+        ul > li:not(:nth-child(3)){
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>第1个</li>
+        <span>span</span>
+        <li>第2个</li>
+        <li>第3个</li>
+        <li>第4个</li>
+        <li>第5个</li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/fontawesome/css/all.css">
+    <style>
+        /* 外层容器 */
+        .outer{
+            width: 240px;
+            margin: 50px;
+            /* 设置阴影(模糊半径=10px) */
+            box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+        }
+        /* 设置图片 */
+        .img-wrapper img{
+            width: 100%;
+            /* 去掉图片与字之间的间隙(非基线对齐) */
+            vertical-align: middle;
+        }
+        .info{
+            padding: 0 18px;
+            color: #acaaaa;
+            font-size: 14px;
+        }
+        /* 设置标题 */
+        .info .title{
+            color: #717171;
+            font-size: 18px;
+            margin: 13px 0 15px 0;
+        }
+        .info .category i{
+            margin-left: 3px;
+            margin-right: 7px;
+        }
+        /* 设置简介的样式 */
+        .info .intro{
+            margin: 18px 4px;
+            line-height: 20px;
+        }
+        /* 设置⭐ */
+        .star-wrapper{
+            height: 46px;
+            line-height: 46px;
+            border-top: 1px solid #e9e9e9;
+            color: #ddd;
+            padding: 0 16px;
+        }
+        .star-wrapper .light{
+            color: #b9cb41;
+        }       
+        .star{
+            float: left;
+        }
+        .star-wrapper .weixin{
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <!-- 外层容器 -->
+    <div class="outer">
+        <!-- 图片容器 -->
+        <div class="img-wrapper">
+            <!-- 加载图片 -->
+            <img src="./img/day15/1.jpg" alt="">
+        </div>
+        <!-- 内容区容器 -->
+        <div class="info">
+            <h2 class="title">Animation films</h2>
+            <h3 class="category">
+                <i class="fas fa-map-marker-alt"></i>
+                Animations
+            </h3>
+            <p class="intro">
+                Lorem ipsum is simply dummy text of the printing & typesetting industry.
+            </p>
+        </div>
+        <!-- 评分的容器 -->
+        <div class="star-wrapper">
+            <!-- 创建星星 -->
+            <ul class="star">
+                <li class="fas fa-star light"></li>
+                <li class="fas fa-star light"></li>
+                <li class="fas fa-star"></li>
+                <li class="fas fa-star"></li>
+            </ul>
+            <!-- 创建logo -->
+            <ul class="weixin">
+                <li class="fab fa-weixin"></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

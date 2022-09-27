@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/home.52ffae439f.chunk.css","mappings":"AAAA,YACI,aACJ","sources":["webpack://07_1.react_scaffold/./src/pages/Home/index.less"],"sourcesContent":[".home-title{\n    color: rgb(177, 28, 28);\n}"],"names":[],"sourceRoot":""}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        1 设置背景颜色范围
+        2 设置背景图片原点的计算位置
+        3 设置背景图片大小
+        4 背景图片跟随元素移动与否
+        5 尝试简写属性
+     -->
+    <style>
+        .box1{
+            /* width: 100px;
+            height: 80px; */
+            width: 300px;
+            height: 500px;
+
+            overflow: auto;
+            border: 10px double red;
+            background-color: #bfa;
+            background-image: url(./img/dahuangmao-02.png);
+            background-repeat: no-repeat;
+            background-position: bottom;
+            /* 1 */
+            /* background-clip: border-box; 默认*/
+            /* background-clip: padding-box; */
+            background-clip: content-box;
+            /* 2 */
+            /* background-origin: padding-box; 默认 */
+            /* background-origin: border-box; */
+            background-origin: content-box;
+            /* 3 */
+            /* background-size: 80px; 高度auto */
+            /* 等比，以求完整显示图片 */
+            /* background-size: contain;  */
+            /* 等比，以求完全铺满 */
+            /* background-size: cover; */
+            
+        }
+        .box2{
+            width: 100%;
+            height: 2000px;
+            background-image: url(./img/dahuangmao-01.png);
+            background-repeat: no-repeat;
+            /* background-origin: padding-box; */
+            /* 4 */
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque accusantium fugit doloribus ipsa veniam, quaerat ipsum id neque, quam ullam doloremque numquam? Dolorem odio atque aperiam repellat! Esse, sit delectus.</div>
+    </div>
+</body>
+</html>

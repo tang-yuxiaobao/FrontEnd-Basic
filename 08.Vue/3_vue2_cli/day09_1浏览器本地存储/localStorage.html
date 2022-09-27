@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocalStorage</title>
+</head>
+<body>
+    <h2>Local Storage</h2>
+    <button onclick="saveData()">点我保存一个数据</button>
+    <button onclick="readData()">点我读取一个数据</button>
+    <button onclick="deleteData()">点我删除一个数据</button>
+    <button onclick="deleteAllData()">点我清空数据</button>
+    
+    <script>
+        let p = {name:'Mike', age:30};
+
+        function saveData(){
+            // 设置一个值（键值对，都得是字符串）
+            localStorage.setItem('msg1','Hi~');
+            localStorage.setItem('msg2',12);
+            localStorage.setItem('person',JSON.stringify(p));  // 把被强制转换成的字符串变为可读的对象形式
+        }
+        function readData(){
+            console.log(localStorage.getItem('msg1'));
+            console.log(localStorage.getItem('msg2'));
+            const result1 = localStorage.getItem('person');
+            // 把json格式的字符串解析成js对象
+            console.log(JSON.parse(result));
+
+            // 读取一个存在的数据
+            console.log(localStorage.getItem('msg3'));  // null
+            const result2 = localStorage.getItem('person');  // result2为null            
+            console.log(JSON.parse(result));// JSON.parse(null) === null
+        }
+        function deleteData(){
+            localStorage.removeItem('msg2');
+        }
+        function deleteAllData(){
+            localStorage.clear();
+        }
+    </script>
+</body>
+</html>

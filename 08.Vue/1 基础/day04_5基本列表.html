@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <h2>遍历数组</h2>
+        <ul>
+            <!-- 插值语法可以是这里的形参 -->
+            <li v-for="(p,index) in persons">
+                {{p.name}}-{{p.age}}-{{index}}
+            </li>           
+        </ul>
+        <h2>遍历对象</h2>
+        <ul>            
+            <li v-for="(value,key) in car">
+                {{key}}-{{value}}
+            </li>           
+        </ul>
+        <h2>遍历字符串（用得少）</h2>
+        <ul>            
+            <li v-for="(char,index) in str">
+                {{char}}-{{index}}
+            </li>           
+        </ul>
+        <h2>遍历指定次数（用得少）</h2>
+        <ul>            
+            <li v-for="(number,index) in 5">
+                {{number}}-{{index}}
+            </li>           
+        </ul>
+    </div>
+</body>
+<script>
+    Vue.config.productionTip = false;
+    new Vue({
+        el: '#root',
+        data: {
+            persons:[
+                {id: '001', name: '张三', age: 15},
+                {id: '002', name: '李四', age: 23},
+                {id: '003', name: '王五', age: 17}
+            ],  
+            car: {
+                name: '一辆车',
+                price:'20万',
+                color:'白色'
+            },
+            str: '努力'
+        }
+    })
+
+</script>
+
+</html>

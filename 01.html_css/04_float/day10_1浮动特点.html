@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        1 设置文字环绕图片的效果
+        2 浮动后的块元素 的宽高
+        3 浮动后的行内元素 的宽高
+     -->
+    <style>
+        /* 清除默认样式 */
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        /* 1 */
+        .box1{
+            width: 70px;
+            height: 70px;
+            background-color: aqua;
+            float: left;
+        }
+        /* 2 */
+        .box2{
+            background-color: blueviolet;
+            /* 该块元素仍然可以设置宽高 */
+            float: left;
+        }
+        /* 3 */
+        span{
+            /* 此时不支持设置宽高 */
+            width: 100px;
+            height: 100px;
+            background-color: blanchedalmond;
+            /* 可以设置宽高了 */
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis minima dolor explicabo neque laudantium, unde necessitatibus! Repellat ullam officia reprehenderit assumenda culpa sequi et a deserunt quisquam. Dolores, similique repellendus!</p>
+    <div class="box2">块元素 laboriosam saepe id excepturi aut eaque.</div>
+    <span>行内元素</span>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        1 box1浮动时不覆盖到box2
+        2 box3的外边距不要给到box1
+     -->
+    <style>
+        .box1{
+            width: 100px;
+            height: 100px;
+            background-color: aquamarine;
+            /* float: left; */
+
+            /* 2 现在box3和父元素的外边距不会重叠了 */
+            overflow: hidden;
+        }
+        .box3{
+            width: 50px;
+            height: 50px;
+            background-color: rgb(218, 123, 167);
+            /* box1不浮动时，box3的上边距会被给到box1 */
+            margin-top: 50px;
+        }
+
+        /* 原本是被浮动的box1覆盖住的 */
+        .box2{
+            width: 100px;
+            height: 100px;
+            background-color: rgb(56, 121, 199);
+            /* 1 现在不会盖住了，到旁边了 */
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box3"></div>
+    </div>
+    <div class="box2"></div>
+</body>
+</html>

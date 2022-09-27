@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function fun(a,b){
+            console.log('a='+a);
+            console.log('b='+b);
+            // alert(this.name);
+        }
+
+        var obj = {
+            name:'obj',
+            sayName:function(){
+                alert(this.name);
+            }
+        };
+
+        // a=undefined；b=undefined
+        // fun.call(obj);
+        // a=2；b=3
+        fun.call(obj,2,3);
+        fun.apply(obj,[2,3]);  // 效果相同
+
+        var obj2 = {name:'obj2'};
+
+        // [object Object] obj
+        // fun.call(obj);
+        // 指定函数执行时候的this，这里的结果：obj2
+        // obj.sayName.apply(obj2);
+
+        // [object Object] obj2
+        // fun.apply(obj2);
+
+        // [object Window]
+        // fun();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

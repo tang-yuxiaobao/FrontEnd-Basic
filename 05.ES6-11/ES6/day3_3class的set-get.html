@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>get 和 set</title>
+</head>
+<body>
+    <script>
+        // get 和 set  
+        class Phone{
+            get price(){  // 给price属性绑定了一个函数
+                console.log("价格属性被读取了");
+                return 'iloveyou';
+            }
+            set price(newVal){  // 绑定set函数时必须要有一个参数
+                console.log('价格属性被修改了');
+            }
+        }
+        //实例化对象
+        let s = new Phone();
+        // 修改s的price属性时，set函数会被触发
+        s.price = 'free';
+    </script>
+</body>
+</html>

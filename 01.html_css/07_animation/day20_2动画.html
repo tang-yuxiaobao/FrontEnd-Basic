@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>精灵动画</title>
+    <style>
+        .box1{
+            /* 大小为单个子图的大小 */
+            width: 256px;
+            height: 256px;
+            margin: 0 auto;
+            background-image: url(./img/bg2.png);
+            /* animation-name: runboy;
+            animation-duration: .5s;
+            animation-timing-function: steps(6);
+            animation-iteration-count: infinite;
+            animation-fill-mode: both; */
+            /* animation-direction: alternate; */
+            /* 简写 */
+            animation: runboy .5s steps(6) infinite;
+            
+        }
+        .box1:hover{
+            animation-play-state: paused;
+
+        }
+        @keyframes runboy {
+            from{
+                background-position: 0 0;
+            }
+            to{
+                /* 图片会自动平铺，此时会回到初始位置 */
+                background-position: -1536px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+</body>
+</html>

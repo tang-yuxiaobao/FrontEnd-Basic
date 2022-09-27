@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Document</title>
+		
+	</head>
+	<body>
+		<script type="text/javascript" >
+
+			let data = {
+				name:'尚硅谷',
+				address:'北京',
+			}
+
+			//创建一个监视的实例对象，用于监视data中属性的变化
+			const obs = new Observer(data)		
+			console.log(obs)	
+
+			//准备一个vm实例对象
+			let vm = {}
+			vm._data = data = obs
+
+			function Observer(obj){
+				// 1 汇总对象中所有的属性，形成一个数组
+				const keys = Object.keys(obj)  // Object中的keys方法
+				//遍历(k是key中的每一个item)
+				keys.forEach((k)=>{
+					Object.defineProperty(this,k,{  // this为Observer的实例对象，而不是data
+						get(){
+							return obj[k]
+						},
+						set(val){  // val 接收修改的值
+							console.log(`${k}被改了，我要去解析模板，生成虚拟DOM.....我要开始忙了`)
+							obj[k] = val
+						}
+					})
+				})
+			}
+			
+			
+
+
+		</script>
+	</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <!-- 实现简单的布局 -->
+    <style>
+        header,main,footer{
+            width: 300px;
+            margin: 0 auto;
+        }
+        header{
+            height: 75px;
+            background-color: rgb(237, 205, 163);
+        }
+        main{
+            height: 250px;
+            background-color: aquamarine;
+            /* 这里的左右一定要是auto，保持居中效果，否则会覆盖掉上面的 */
+            margin: 10px auto;
+        }
+        nav,article,aside{
+            height: 100%;
+            float: left;
+        }
+        nav{
+            width: 65px;
+            background-color: antiquewhite;
+        }
+        article{
+            width: 171px;
+            background-color: salmon;
+            margin: 0 2px;
+        }
+        aside{
+            width: 60px;
+            background-color: darkcyan;
+        }
+        footer{
+            height: 65px;
+            background-color: rebeccapurple;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 头部 -->
+    <header></header>
+    <!-- 网页主体 -->
+    <main>
+        <!-- 左侧导航 -->
+        <nav></nav>
+        <!-- 中间内容 -->
+        <article></article>
+        <!-- 右边侧栏 -->
+        <aside></aside>
+    </main>
+    <!-- 网页底部 -->
+    <footer></footer>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        1 将盒子1移动到2旁边，而3不动
+        2 对行内元素进行一下测试 -->
+    <style>
+        .box1{
+            width: 100px;
+            height: 100px;
+            background-color: aquamarine;
+        }
+        .box2{
+            width: 100px;
+            height: 100px;
+            background-color: rgb(127, 136, 255);
+            /* 1 开启定位 */
+            position: relative;
+            left: 100px;
+            top: -100px;
+        }
+        .box3{
+            width: 100px;
+            height: 100px;
+            background-color: rgb(255, 127, 180);
+        }
+        /* 2 行内元素与块元素同理 */
+        .line1{
+            background-color: rgb(229, 178, 101);
+        }
+        .line2{
+            background-color: rgb(229, 178, 101);
+            position: relative;
+            top: 5px;
+            left: -10px;
+        }
+        .line3{
+            background-color: rgb(229, 178, 101);
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">1</div>
+    <div class="box2">2</div>
+    <div class="box3">3</div>
+    <span class="line1">span1</span>
+    <span class="line2">span2</span>
+    <span class="line3">span3</span>
+</body>
+</html>

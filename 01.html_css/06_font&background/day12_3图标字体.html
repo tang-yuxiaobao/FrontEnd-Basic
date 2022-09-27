@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./fontawesome/css/all.css">
+    <!-- 
+        1 通过伪元素使用图标字体
+        2 通过类名使用图标字体
+        3 通过实体使用
+     -->
+    <style>
+        li{
+            list-style: none;
+        }
+        li::before{
+            content: '\f1b0';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            color: aqua;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>锄禾日当午</li>
+        <li>汗滴禾下土</li>
+    </ul>
+    <!-- 2 -->
+    <span class="fas fa-bell"></span>
+    <!-- 3 -->
+    <span class="fas">&#xf0f3;</span>
+</body>
+</html>

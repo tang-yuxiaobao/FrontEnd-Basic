@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        1 x旋转
+        2 y旋转
+        3 z旋转
+        4 对比先旋转再平移 和 先平移再旋转的区别
+        5 设置看不见背面
+     -->
+    <style>
+        body{
+            /* 视距（一般800~1000） */
+            perspective: 800px;
+        }
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+            margin: 200px auto;
+            transition: 2s;
+        }
+        body:hover .box1{
+            /* 1 右边是x轴，向前翻转 */
+            /* transform: rotateX(45deg); */
+            /* 2 下面是y轴方向*/
+            /* transform: rotateY(.4turn); */
+            /* 3 */
+            /* transform: rotateZ(.5turn); */
+            /* 4 */
+            /* transform: translateZ(200px) rotateX(180deg); */
+            transform: rotateY(180deg) translateZ(300px);
+            /* 5 */
+            backface-visibility: visible;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+</body>
+</html>

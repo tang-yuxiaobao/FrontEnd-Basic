@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        1 在网页输出*的倒三角
+        2 打印乘法表
+     -->
+    <script>
+        // 1
+        for(var i = 0; i < 5; i++){
+            for(var j = 5; j > i; j--){
+                document.write('*&nbsp;')
+            }
+            document.write('<br />')
+        }
+
+        // 2
+        for(i = 1; i <= 9; i++){
+            for(j = 1; j <= i; j++){
+                document.write('<span>' + i + '*' + j + '=' + i * j + '</span>');
+            }
+            document.write('<br />');
+        }
+    </script>
+    <style>
+        span{
+            display: inline-block;
+            width: 80px;
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+</html>

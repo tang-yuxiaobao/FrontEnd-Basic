@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        1 测试行内元素span的盒模型设置(内外边距，边框)
+        2 给a标签设置宽高
+        3 用两种方式隐藏a标签
+     -->
+    <style>
+        /* 2 */
+        /* a{
+            background-color: plum;
+            display: block;
+            width: 100px;
+            height: 200px;
+        } */
+        a{
+            background-color: plum;
+            /* 3.1 不保留位置 */
+            /* display: none; */
+            /* 3.2 保留位置 */
+            display: block;
+            visibility: hidden;
+            width: 100px;
+            height: 200px;
+        }
+        span{
+            background-color: aqua;
+            /* 1 */
+            /* padding: 40px; */
+            /* border: 50px solid ; */
+            margin: 50px;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: chocolate;
+        }
+    </style>
+</head>
+<body>
+    <a href="javascript:;">hyperlink</a>
+    <span>行内元素</span>
+    <span>行内元素</span>
+    <div></div>
+</body>
+</html>

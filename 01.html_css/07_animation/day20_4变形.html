@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        1 使用两种方式令元素居中
+        2 做出 鼠标移入元素会自动浮出的效果
+     -->
+    <style>
+        body{
+            background-color: rgb(244, 242, 242);
+        }
+        /* 1.1 只对长度固定 的元素管用 */
+        .box1{
+            width: 100px;
+            height: 100px;
+            background-color: aquamarine;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            /* 左右居中 */
+            margin: 0 auto;
+        }
+        /* 1.2 可以对 大小不定的元素居中 */
+        .box2{
+            background-color: rgb(249, 249, 81);
+            position: absolute;
+            text-align: center;
+            left: 50%;
+            top: 50%;
+            transform: translateX(-50%) translateY(-50%);
+        }
+        .box3{
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            margin: 0 auto;
+            margin-top: 250px;
+        }
+        .box4, .box5{
+            width: 110px;
+            height: 150px;
+            background-color: #fff;
+            float: left;
+            margin: 0 10px;
+            /* 过渡效果 */
+            transition: all .3s;
+        }
+        .box4:hover, .box5:hover{
+            transform: translateY(-4px);
+            box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2">2022<br>年7月12日</div> 
+    <div class="box3"></div>
+    <div class="box4"></div>
+    <div class="box5"></div>
+</body>
+</html>

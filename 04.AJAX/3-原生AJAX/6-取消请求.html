@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>取消请求</title>
+</head>
+<body>
+    <button>点击发送</button>
+    <button>点击取消</button>
+    <script>
+        //获取元素对象
+        const btns = document.querySelectorAll('button');
+        // let生效于当前作用域，不会有变量污染的问题
+        let x = null;
+
+        btns[0].onclick = function(){
+            // 1
+            x = new XMLHttpRequest();
+            // 2 给谁发，发什么类型
+            x.open("GET",'http://127.0.0.1:8000/delay');
+            // 3 发送
+            x.send();
+        }
+
+        // abort
+        btns[1].onclick = function(){
+            x.abort();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        #box1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            left: 100px;
+            top: 100px;
+        }
+    </style>
+    <script>
+        // 用 onkeydown 控制速度；定时器控制方向
+        window.onload = function () {
+            // 定义一个变量表示移动速度
+            var speed = 5;
+            //创建一个变量表示方向
+            //通过修改dir来影响移动的方向
+            var dir = 0;
+
+            // 开启一个定时器控制div移动
+            // 每30毫秒调用一次函数
+            setInterval(function () {
+                switch (dir) {
+                    case 'ArrowLeft':
+                        box1.style.left = box1.offsetLeft - speed + 'px';
+                        break;
+                    case 'ArrowRight':
+                        
+                        box1.style.left = box1.offsetLeft + speed + 'px';
+                        break;
+                    case 'ArrowUp':
+                        box1.style.top = box1.offsetTop - speed + 'px';
+                        break;
+                    case 'ArrowDown':
+                        box1.style.top = box1.offsetTop + speed + 'px';
+                        break;
+                }
+            }, 30);
+
+            // 获取box
+            // var box1 = document.getElementById('box1');
+            // 给 document 绑定事件
+            document.onkeydown = function (event) {
+                event = event || window.event;
+
+                // 用户按了ctrl后速度加快
+                if (event.ctrlKey) {
+                    speed = 20;
+                }else{
+                    speed = 5;
+                }
+
+                // 使dir=按键的值
+                dir = event.key;
+                // console.log(dir);
+            };
+
+            // 按键松开时div不再移动
+            document.onkeyup = function(){
+                dir = 0;
+            };
+        };
+    </script>
+</head>
+
+<body>
+    <div id="box1"></div>
+</body>
+
+</html>

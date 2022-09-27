@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        1 首字母下沉
+        2 设置第一行的背景为黄色
+        3 设置鼠标选中的内容背景为浅灰色
+        4 通过css在段落前后凭空添加一个内容，并设置样式
+        5 使用q标签打出引号
+
+        发现：css添加的第一个字符位置的内容也会被下沉
+     -->
+    <style>
+        p{
+            font-size: 20px;
+        }
+        /* 1 */
+        p::first-letter{
+            font-size: xx-large;
+        }
+        /* 2 */
+        p::first-line{
+            background-color: yellow;
+        }
+        /* 3 */
+        p::selection{
+            background-color:rgb(200, 198, 198);
+        }
+        /* 4 */
+        #Paragraphs1::before{
+            content: '(p≧w≦q)';
+            font-size: 10px;
+        }
+        #Paragraphs1::after{
+            content: '😊🎶';
+            background-color: beige;
+        }
+    </style>
+</head>
+<body>
+    <!-- 5 -->
+    <q>hello</q>
+    <p id="Paragraphs1">Lorem(1) ipsum dolor sit amet consectetur adipisicing elit. Aut eveniet eaque libero amet obcaecati sed earum repellendus, porro labore doloribus assumenda debitis asperiores? Necessitatibus quidem reprehenderit error earum sapiente repellendus.</p>
+    <p>Lorem(2) ipsum dolor sit amet consectetur adipisicing elit. Aut eveniet eaque libero amet obcaecati sed earum repellendus, porro labore doloribus assumenda debitis asperiores? Necessitatibus quidem reprehenderit error earum sapiente repellendus.</p>
+</body>
+</html>

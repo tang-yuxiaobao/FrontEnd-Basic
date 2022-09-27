@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        .nav{
+            width: 1210px;
+            height: 48px;
+            line-height: 48px;
+            background-color: #e8e7e3;
+            margin: 50px auto;
+            /* 1 设置为弹性容器 */
+            display: flex;
+        }
+        .nav li{
+            /* 2 设置增长系数 */
+            flex-grow: 1;
+        }
+        .nav a{
+            display: block;
+            text-decoration: none;
+            color: #777;
+            font-size: 18px;
+            /* 2 文字居中，就不用测量每个子元素的长度了 */
+            text-align: center;
+        }
+        .nav li:last-child a{
+            padding: 0 43px 0 41px;
+        }
+        .nav a:hover{
+            background-color: #3F3F3F;
+            color: #e8e7e3;
+        }
+    </style>
+</head>
+<body>
+    <ul class="nav">
+        <li><a href="#">HTML/CSS</a></li>
+        <li><a href="#">Browser Side</a></li>
+        <li><a href="#">Server Side</a></li>
+        <li><a href="#">Programming</a></li>
+        <li><a href="#">XML</a></li>
+        <li><a href="#">Web Building</a></li>
+        <li><a href="#">Reference</a></li>
+    </ul>
+</body>
+</html>

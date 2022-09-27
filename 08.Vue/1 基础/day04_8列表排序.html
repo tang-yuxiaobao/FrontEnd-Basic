@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <h2>人员列表</h2>
+        <input type="text" placeholder="请输出名字" v-model="keyWord"> <!-- 双向绑定，收集用户输入的信息 -->
+        <button @click="sortType=2">年龄升序</button>
+        <button @click="sortType=1">年龄降序</button>
+        <button @click="sortType=0">默认</button>
+        <ul>
+            <!-- 插值语法可以是这里的形参 -->
+            <li v-for="(p,index) in filterPersons" :key="id">
+                {{p.name}}-{{p.age}}-{{p.sex}}
+            </li>
+        </ul>
+</body>
+<script>
+    Vue.config.productionTip = false;
+    new Vue({
+        el: '#root',
+        data: {
+            keyWord: '',
+            sortType: 0,  // 0 默认顺序；1 降序；2 升序
+            persons: [
+                { id: '001', name: '马冬梅', age: 15, sex: '女' },
+                { id: '002', name: '周冬雨', age: 23, sex: '女' },
+                { id: '003', name: '周杰伦', age: 19, sex: '男' },
+                { id: '004', name: '温兆伦', age: 17, sex: '男' }
+            ]
+        },
+        computed: {
+            // 只读不改，用简写
+            filterPersons() {
+                // 1 获取过滤后的数组
+                const arr = this.persons.filter((p) => {
+                    // filter规定了要返回一个条件
+                    return p.name.indexOf(this.keyWord) != -1;
+                })
+                // 2 判断是否需要排序
+                if (this.sortType) {
+                    arr.sort((p1,p2)=>{
+                        return this.sortType === 1? p2.age-p1.age: p1.age-p2.age;
+                    })
+                }
+                // 3 返回最后的计算结果
+                return arr;
+            }
+        }
+    })
+// sort回调函数：
+//      如果 返回值 > 0，则元素交换位置
+//      如果 返回值 < 0，则元素位置不变
+//      如果 返回值 = 0，则认为两个元素相等，不交换位置
+</script>
+
+</html>

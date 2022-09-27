@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symbol 创建对象属性</title>
+</head>
+<body>
+    <script>
+        //向对象中添加方法 up down
+        // let game = {
+        //     name:'俄罗斯方块',
+        //     up: function(){},
+        //     down: function(){}
+        // };
+        // let methods = {  // 声明一个对象
+        //     up: Symbol(),
+        //     down: Symbol()
+        // };
+
+        // // 1
+        // // game[] 对象添加属性
+        // game[methods.up] = function(){
+        //     console.log("我可以改变形状");
+        // }
+        // game[methods.down] = function(){
+        //     console.log("我可以快速下降!!");
+        // }
+        // // 调用
+        // game[methods.up]();
+        // game[methods.down]();
+
+        // console.log(game);
+
+        // 2 
+        let youxi = {
+            name:"狼人杀",
+            [Symbol.for('say')]: function(){
+                console.log("发言")
+            },
+            [Symbol.for('zibao')]: function(){
+                console.log('自爆');
+            }
+        }
+        let say = Symbol.for('say');
+
+        // 调用
+        youxi[say]();  // 发言
+
+        console.log(youxi);
+
+        
+    </script>
+</body>
+</html>

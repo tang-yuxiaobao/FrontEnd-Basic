@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BigInt</title>
+</head>
+<body>
+    <script>
+        // 大整形
+        let n = 521n;
+        console.log(n, typeof(n));  // 521n "bigint"
+
+        // 函数
+        let n1 = 123;
+        console.log(BigInt(n1));  // 123n
+        // console.log(BigInt(1.2));  error
+
+        // 用途：大数值运算
+        let max = Number.MAX_SAFE_INTEGER;  // Number的MAX_SAFE_INTEGER属性：最大安全整数
+        console.log(max);  // 9007199254740991
+        console.log(max + 1);  // 9007199254740992
+        console.log(max + 2);  // 9007199254740992 不能再加了
+
+        console.log(BigInt(max));  // 9007199254740991n
+        console.log(BigInt(max) + BigInt(1));  // 9007199254740992n
+        console.log(BigInt(max) + BigInt(2));  // 9007199254740993n  大数值运算
+    </script>
+</body>
+</html>

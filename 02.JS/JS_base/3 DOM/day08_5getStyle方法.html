@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1{
+            /* width: 200px; */
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+
+<script>
+    // 点击按钮后读取box1的样式
+    window.onload = function(){
+        // 获取box1
+        var box1 = document.getElementById('box1');
+        // 为按钮绑定单击响应函数
+        var btn01 = document.getElementById('btn01');
+        btn01.onclick = function(){
+            alert(getStyle(box1,"width"));
+        };
+    };
+
+    function getStyle(obj, name){
+        // 变量 = window对象的属性
+        // 变量没找到，报错；属性没找到，undefined。所以选择后者
+        if(window.getComputedStyle){
+            // [name] 这么写的原因：对象["属性名"] = 属性值
+            return getComputedStyle(obj, null)[name];
+        }else{
+            return obj.currentStyle[name];
+        }
+    }
+</script>
+</head>
+<body>
+    <button id="btn01">点这里1</button>
+    <button id="btn02">点这里2</button>
+    <br/>
+    <br/>
+    <div id="box1"></div>
+</body>
+</html>

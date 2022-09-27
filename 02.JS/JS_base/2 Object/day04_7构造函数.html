@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Person(name, age, gender){
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+            this.sayName = function(){
+                alert(this.name);
+            };
+        }
+        function Dog(){
+
+        }
+
+        var per1 = new Person('Mike',18,'man');
+        var per2 = new Person('Kangkang',15,'man');
+        var per3 = new Person('Lucy',18,'woman');
+
+        var dog = new Dog();
+
+        console.log(per1);
+        console.log(dog);
+
+        console.log(dog instanceof Person);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

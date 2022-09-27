@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        1 使用_clear解决高度塌陷问题
+        2 使用伪元素最终解决这个问题
+     -->
+    <style>
+        .box1{
+            border: 10px solid red;
+        }
+        .box2{
+            width: 100px;
+            height: 200px;
+            background-color: bisque;
+            float: left;
+        }
+        /* 2 */
+        /* 父元素box1的最后 */
+        .box1::after{
+            content: '';
+            /* 2.2 转换为块元素就可以了 */
+            display: block;
+            /* 2.1 因为::after伪元素是行内元素，看不出清除浮动影响所带来的效果 */
+            clear: both;
+        }
+        .box3{
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+        <!-- 1 这是使用结构去解决表现的问题，不是好办法 -->
+        <!-- 在浮动的元素下添加一个元素，使用clear消除上面元素对它的影响 -->
+        <!-- <div class="box3"></div> -->
+    </div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        1 设置字体的颜色、大小、字体族
+        2 将服务器中的字体直接提供给用户使用
+     -->
+    <style>
+        /* 2 */
+        @font-face {
+            /* 指定字体名字 */
+            font-family: 'myfont';
+            /* 服务器中的字体路径 */
+            src: url('./font/ZCOOLKuaiLe-Regular.ttf') format('truetype'),
+                 url('./font/ZCOOLQingKeHuangYou-Regular.ttf') format('truetype');
+        }
+        p{
+            /* 1 */
+            color: brown;
+            font-size: 20px;
+            /* font-family: 'Microsoft YaHei', 'Courier New', monospace; */
+            font-family: myfont;
+        }
+    </style>
+</head>
+<body>
+    <p>what are you 弄啥嘞？</p>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 1 检查正则表达式中是否含有 \
+        var reg = /\\/;
+        // 在字符串中需要使用 \\ 来代表 \
+        console.log(reg.test('ab\\c'));  
+
+        // true，因为使用构造函数时的参数是一个字符串，而\是字符串中的转义字符，如果使用\就要用\\代替
+        reg = new RegExp('\.');
+        console.log(reg.test('dghfkhg'))  
+
+        // 2 检查一个字符串中是否有单词 child
+        // \b 单词边界
+        reg = /\bchild\b/;
+        console.log(reg.test('children'));
+
+        // 3 去除字符串前后的空格
+        var str = '       day day up!     ';
+        // 3.1 去除开头的空格：^表示开头，\s表示空格，*表示0个或多个
+        // str = str.replace(/^\s*/,"");
+        // 3.2 去除结尾的空格：&表示结尾
+        // str = str.replace(/\s*$/,"");
+        // 3.3 同时去除：中间加个“或”，最后加个“全局匹配”就可以了
+        str = str.replace(/^\s*|\s*$/g,"");
+        // +表示1个或多个
+        str = str.replace(/^\s+|\s+$/g,"");
+
+        console.log(str);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

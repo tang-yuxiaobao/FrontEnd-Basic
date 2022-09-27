@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        1 为div直接包含的span设置一个字体颜色
+        2 给div下的所有span后代设置30px
+        3 给最深层的span设置颜色
+        4 选择p标签的下一个span
+        5 选择p标签下的所有span元素
+     -->
+    <style>
+        /* 1 */
+        div > span{
+            color: rebeccapurple;
+        }
+        /* 2 */
+        div span{
+            font-size: 30px;
+        }
+        /* 3 */
+        div > p > span{
+            font-family: 黑体;
+        }
+        /* 4 */
+        p + span{
+            color: green;
+        }
+        /* 5 */
+        p ~ span{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        the first div
+        <p>
+            a p in div
+            <br>
+            <span>a span in p</span>
+        </p>
+        <span>a span in div</span><br>
+        <span>a span in div</span>
+    </div>
+</body>
+</html>

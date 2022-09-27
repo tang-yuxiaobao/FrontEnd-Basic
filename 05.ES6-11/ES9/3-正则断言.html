@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正则扩展-反向断言</title>
+</head>
+<body>
+    <script>
+        // 需求：取出后面的数字
+        //声明字符串
+        let str = 'JS5211314你知道么555啦啦啦';  // 把这里的数字想象成变化的
+        //正向断言：根据后面的内容（啦啦啦）做判断
+        const reg = /\d+(?=啦)/;  // \d 数字0-9   判断数字后面是不是“啦”
+        const result = reg.exec(str);
+
+        //反向断言：根据前面的内容（啦啦啦）做判断
+        const reg1 = /(?<=么)\d+/;  // 判断数字前面是不是“么”
+        const result1 = reg.exec(str1);
+        console.log(result1);
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <h2>人员列表</h2>
+        <input type="text" placeholder="请输出名字" v-model="keyWord">  <!-- 双向绑定，收集用户输入的信息 -->
+        <ul>
+            <!-- 插值语法可以是这里的形参 -->
+            <li v-for="(p,index) in filterPersons" :key="id">
+                {{p.name}}-{{p.age}}-{{p.sex}}
+            </li>           
+        </ul>
+</body>
+<script>
+    Vue.config.productionTip = false;
+    new Vue({
+        el: '#root',
+        data: {
+            keyWord:'',
+            persons:[
+                {id: '001', name: '马冬梅', age: 15, sex: '女'},
+                {id: '002', name: '周冬雨', age: 23, sex: '女'},
+                {id: '003', name: '周杰伦', age: 19, sex: '男'},
+                {id: '004', name: '温兆伦', age: 17, sex: '男'}
+            ],   
+            filterPersons:[]           
+        },
+        watch:{
+            keyWord:{
+                immediate: true,
+                handler(val){
+                    // p为表格中的每一项
+                    this.filterPersons = this.persons.filter((p)=>{
+                        // 满足此条件的项返回
+                        return p.name.indexOf(val)!=-1;
+                    })
+                }
+            }
+        }
+    })
+</script>
+
+</html>

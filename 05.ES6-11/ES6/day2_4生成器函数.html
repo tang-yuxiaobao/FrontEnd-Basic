@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生成器</title>
+</head>
+<body>
+    <script>    
+        //生成器其实就是一个特殊的函数
+        //异步编程  纯回调函数  node fs  ajax mongodb
+        //函数代码的分隔符
+        function * gen(){
+            console.log(111);
+            yield '1只';
+            console.log(222);
+            yield '2只';
+            console.log(333);
+            yield '3只';
+            console.log(444);
+        }
+
+        // 这里的返回结果iterator是一个迭代器对象，里面有next方法
+        let iterator = gen();
+        // 使用.next()来执行函数
+        console.log(iterator.next());
+        console.log(iterator.next());
+        console.log(iterator.next());
+        console.log(iterator.next());
+
+        //遍历
+        for(let v of gen()){
+            console.log(v);
+        }
+
+    </script>
+</body>
+</html>

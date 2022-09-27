@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件的委派</title>
+    <script>
+        window.onload = function () {
+            // 获取ul
+            var u1 = document.getElementById('u1');
+
+            //点击按钮以后添加超链接
+            var btn01 = document.getElementById('btn01');
+            btn01.onclick = function () {
+                // 创建一个li
+                var li = document.createElement('li');
+                li.innerHTML = '<a href="javascript:;" class="link">新超链接</a>';
+                // 将li添加到ul中
+                u1.appendChild(li);
+            };
+
+            // 为每一个超链接都绑定一个单击响应函数（只能为已有的a设置，新建的就不可以了，不可取）
+            // 获取所有的a
+            var allA = document.getElementsByTagName('a');
+            // for(var i = 0; i < allA.length; i++){
+            //     allA[i].onclick = function(){
+
+            //     };
+            // }
+            // 尝试将其绑定给共同的祖先元素,可以解决上述问题
+            u1.onclick = function (event) {
+                event = event || window.event;
+
+                /*
+                 * target
+                 * 	- event中的target表示的触发事件的对象
+                 */
+                //alert(event.target);
+
+
+                //如果触发事件的对象是我们期望的元素，则执行否则不执行
+                if (event.target.className == "link") {
+                    alert("我是ul的单击响应函数");
+                }
+
+            };
+        };
+    </script>
+</head>
+
+<body>
+    <button id="btn01">添加超链接</button>
+
+    <ul id="u1" style="background-color: #bfa;">
+        <li>
+            <p>我是p元素</p>
+        </li>
+        <li><a href="javascript:;" class="link">超链接一</a></li>
+        <li><a href="javascript:;" class="link">超链接二</a></li>
+        <li><a href="javascript:;" class="link">超链接三</a></li>
+    </ul>
+</body>
+
+</html>

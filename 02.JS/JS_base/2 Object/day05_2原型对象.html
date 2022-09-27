@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 创建一个构造函数
+        function MyClass(){
+
+        }
+
+        // 向MyClass的原型中添加一个name属性
+        MyClass.prototype.name = 'Cindy';
+        var mc = new MyClass();
+
+        // 检查对象里是否含有某个属性
+        console.log('name' in mc);
+        // 检查对象自身中是否含有某个属性(对象.hasOwnProperty("属性名"))
+        console.log(mc.hasOwnProperty('name'));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

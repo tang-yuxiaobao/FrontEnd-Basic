@@ -1,0 +1,58 @@
+// Grid system
+// --------------------------------------------------
+
+// Container widths
+// 固定容器
+.container {
+  .container-fixed();
+  // 这里的顺序是严格从小到大的，因为会覆盖
+  @media (min-width: @screen-sm-min) {
+    width: @container-sm;
+  }
+  @media (min-width: @screen-md-min) {
+    width: @container-md;
+  }
+  @media (min-width: @screen-lg-min) {
+    width: @container-lg;
+  }
+}
+
+
+// Fluid container
+// 流体容器
+.container-fluid {
+  .container-fixed();
+}
+
+
+// Row
+// 行
+.row {
+  .make-row();
+}
+
+.row-no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+
+  [class*="col-"] {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+
+// Columns
+// 列
+.make-grid-columns();
+.make-grid(xs);
+@media (min-width: @screen-sm-min) {
+  .make-grid(sm);
+}
+@media (min-width: @screen-md-min) {
+  .make-grid(md);
+}
+
+@media (min-width: @screen-lg-min) {
+  .make-grid(lg);
+}

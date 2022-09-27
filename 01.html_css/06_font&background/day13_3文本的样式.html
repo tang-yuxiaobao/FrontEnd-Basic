@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        1 设置文本上、下划线，删除线
+        2 网页中如何处理空白？
+     -->
+    <style>
+        /* 1 */
+        p span{
+            text-decoration: overline dashed pink;
+            text-decoration: underline red;
+        }
+        div span{
+            text-decoration: line-through blue double;
+        }
+        /* 2 */
+        .box{
+            width: 200px;
+            /* 不换行 */
+            white-space: nowrap;
+            /* 超出的部分剪切掉 */
+            overflow: hidden;
+            /* 设置省略号 */
+            text-overflow: ellipsis;
+        }
+    </style>
+</head>
+<body>
+    <p>清醒的历史自觉——“<span>勇于自我革命，是我们党最鲜明的品格，也是我们党最大的优势</span>”</p>
+    <div><span>多余的字 </span>常怀远虑，居安思危。对如何跳出历史周期率的思考，始终萦绕在习近平总书记心头。</div>
+    <br>
+    <div class="box">新时代的中国共产党人用“十年磨一剑”的精神练就自我净化的“绝世武功”，消除了党、国家、军队内部存在的严重隐患，赢得了保持同人民群众的血肉联系、人民衷心拥护的历史主动，赢得了全党高度团结统一、走在时代前列、带领人民实现中华民族伟大复兴的历史主动。</div>
+</body>
+</html>

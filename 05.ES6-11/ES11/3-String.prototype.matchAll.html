@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String.prototype.matchAll</title>
+</head>
+<body>
+    <script>
+        let str = `<ul>
+            <li>
+                <a>肖生克的救赎</a>
+                <p>上映日期: 1994-09-10</p>
+            </li>
+            <li>
+                <a>阿甘正传</a>
+                <p>上映日期: 1994-07-06</p>
+            </li>
+        </ul>`;
+
+        //声明正则
+        const reg = /<li>.*?<a>(.*?)<\/a>.*?<p>(.*?)<\/p>/sg;
+
+        //调用方法
+        const result = str.matchAll(reg);  // 有next方法，是一个可迭代对象
+
+        // 可以使用let of对其进行遍历
+        for(let v of result){
+            console.log(v);  // 两个数组，都长这样：[字符串内容, 电影名, 上映时间]
+        }
+
+        // 也可以使用扩展运算符将其展开
+        const arr = [...result];
+        console.log(arr);  // 一个二维数组：[[字符串内容, 电影名, 上映时间], [字符串内容, 电影名, 上映时间]]
+
+
+
+
+        
+    </script>
+</body>
+</html>

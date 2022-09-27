@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        1 实现一个简单文本框表单的提交
+        2 密码框
+        3 单选
+        4 多选
+        5 下拉列表
+     -->
+    <!-- 
+        1 重置按钮
+        2 普通按钮
+        3 button标签
+        4 提交颜色
+        5 提交邮箱
+        6 关闭自动补全
+        7 只读
+        8 禁用
+        9 自动获取焦点
+     -->
+</head>
+<body>
+    <form action="new_YG.html">
+        <!-- 1 -->
+        <input type="text" name="surname">
+        <input type="submit" value="点击此处提交"><br>
+        <!-- 2 -->
+        <input type="password" name="password">
+        <input type="submit"><br>
+        <!-- 3 -->
+        <input type="radio" name="h" value="a" checked>
+        <input type="radio" name="h" value="b">
+        <input type="radio" name="h" value="c">
+        <input type="submit"><br>
+        <!-- 4 -->
+        <input type="checkbox" name="test" value="1">
+        <input type="checkbox" name="test" value="2">
+        <input type="checkbox" name="test" value="3">
+        <input type="checkbox" name="test" value="4">
+        <input type="submit">
+    </form>
+    <form action="new_YG.html">
+        <!-- 1 -->
+        <input type="reset">
+        <!-- 2 -->
+        <input type="button" value="按钮">
+        <!-- 3 -->
+        <button type="reset">重置</button>
+        <button type="button">按钮</button>
+        <button type="submit">提交</button>
+        <!-- 4 -->
+        <input type="color">
+        <!-- 5 6 -->
+        <input type="email" autocomplete="off">
+        <!-- 7 -->
+        <input type="text" value='加油' readonly><input type="submit"><br>
+        <!-- 8 -->
+        <input type="text" value='加油' disabled><br>
+        <!-- 9 -->
+        <input type="text" name="username" autofocus>
+    </form>
+</body>
+</html>

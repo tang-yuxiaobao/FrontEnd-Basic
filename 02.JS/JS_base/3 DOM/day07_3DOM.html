@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">这是一个按钮</button>
+    <!-- 
+        浏览器提供的文档节点对象document，它是window属性
+        可以在网页中直接使用，代表的是整个网页
+     -->
+    <script>
+        // 获取button对象
+        var btn = document.getElementById('btn');
+        // 修改对象内容（文字）
+        // innerHTML是属性：对象内部的html代码
+        btn.innerHTML = 'This is a button';
+    </script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <style>
+        /* body {
+            background-color: rgb(248, 249, 245);
+        } */
+        a{
+            text-decoration: none;
+        }
+
+        /* 
+        div{
+            margin: 10px;
+            width: 350px;
+            height: 310px;
+            background-color: #fff;
+        }
+        ul{
+            margin: 10px;
+            padding-left: 10px;
+        }
+        ul li{
+            padding: 5px 0;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+           width: 95%; 
+        } */
+
+        /* 参考答案 */
+        /* 容器样式 */
+        .news-wrapper {
+            width: 300px;
+            height: 357px;
+            margin: 50px auto;
+            background-color: #fff;
+            border-top: 1px solid #ddd;
+        }
+
+        .news-title {
+            /* 为了边框和文字宽度一致，需要将h2变成行内块 */
+            display: inline-block;
+            height: 30px;
+            border-top: 1px red solid;
+            /* 通过margin-top将h2上移，盖住上边框 */
+            margin-top: -1px;
+            padding-top: 10px;
+        }
+        .news-title a{
+            font-weight: bold;
+            color: #40406b;
+        }
+        /* 设置图片容器的高度  */
+        .news-img{
+            height: 150px;
+        }
+        /* 设置图片的文字效果 */
+        .news-img .img-title{
+            color: #fff;
+            margin-top: -30px;
+            font-size: medium;
+            font-weight: bold;
+            padding-left: 30px;
+        }
+        /* 新闻列表 */
+        .news-list{
+            margin-top: 20px;
+        }
+        .news-list li{
+            margin-bottom: 17px;
+        }
+        /* 通过before伪元素，来为每一个li添加项目符号 */
+        .news-list li a::before{
+            content: '■';
+            font-size: 12px;
+            margin-right: 12px;
+        }
+        .news-list li a{
+            font-size: 14px;
+            color: #666;
+        }
+        /* 设置超链接的鼠标移入的样式 */
+        .news-list li a:hover{
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <a href="javascript:;"><img src="img/day08/1.jpeg" alt=""></a>
+        <ul>
+            <li>乔治:我爱LA 喜欢和LBJ一起打球</li>
+            <li>格林:3年前降薪就在等KD 特制T恤嘲讽LBJ</li>
+            <li>塔克4000双鞋让保罗羡慕嫉妒 乔丹被震惊</li>
+            <li>CBA下季新赛制:常规赛4组 循环增至46轮</li>
+        </ul>
+    </div>
+
+    <!-- 参考答案 -->
+
+    <!-- 新闻列表的外层容器 -->
+    <div class="news-wrapper">
+        <!-- 标题标签 -->
+        <h2 class="news-title">
+            <a href="#">体育</a>
+        </h2>
+        <!-- 图片容器 -->
+        <div class="news-img">
+            <a href="#">
+                <img src="img/day08/1.jpeg" alt="费德勒">
+                <!-- 图片标题 -->
+                <h3 class="img-title">费德勒首负迪米 扶额摇头不满发挥</h3>
+            </a>
+        </div>
+        <!-- 新闻列表 -->
+        <ul class="news-list">
+            <li><a href="#">乔治:我爱LA 喜欢和LBJ一起打球</a></li>
+            <li><a href="#">格林:3年前降薪就在等KD 特制T恤嘲讽LBJ</a></li>
+            <li><a href="#">塔克4000双鞋让保罗羡慕嫉妒 乔丹被震惊</a></li>
+            <li><a href="#">CBA下季新赛制:常规赛4组 循环增至46轮</a></li>
+        </ul>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var score = prompt('请输入小明的期末成绩(0-100)');
+        // 判断值是否合法
+        if(score > 100 || score < 0 || isNaN(score)){
+            alert("输入错误");
+        }else if(score == 100){
+            alert('奖励一辆BMW');
+        }else if(score >= 80){
+            alert('奖励一台手机');
+        }else if(score >= 60){
+            alert('奖励一本书');
+        }else{
+            alert('没有奖励');
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

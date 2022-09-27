@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入vue -->
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+    <!-- 准备一个容器 -->
+    <div id="root">
+        <!-- 插值语法 -->
+        <h1>hello,{{name}}</h1>
+        <a v-bind:href="school.url.toUpperCase()">link1{{school.name}}</a>
+        <a :href="school.url">link2{{school.name}}</a>
+    </div>
+    
+    <script>
+        Vue.config.productionTip = false;  // 阻止vue在启动时生成 生产提示 
+        
+        // 创建vue实例
+        new Vue({
+            el:'#root',  // el：（通常使用css选择器）指定容器
+            data:{  // data：存储数据，供el指定的容器使用，值我们暂时先写成一个对象
+                name: 'YG',
+                school: {
+                    name: 'tjj',
+                    url: 'http://www.baidu.com'
+                }
+            }
+        })
+    </script>
+</body>
+</html>

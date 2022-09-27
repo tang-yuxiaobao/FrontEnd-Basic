@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+
+    <script>
+        // 点击按钮后修改box1的大小
+        window.onload = function(){
+            // 获取box1
+            var box1 = document.getElementById('box1');
+            // 为按钮绑定单击响应函数
+            var btn01 = document.getElementById('btn01');
+            btn01.onclick = function(){
+                box1.style.width = '300px';
+                box1.style.height = '300px';
+                box1.style.backgroundColor = 'blue';
+            };
+
+            // 点击按钮后,读取元素的样式
+            var btn02 = document.getElementById('btn02');
+            btn02.onclick = function(){
+                alert(box1.style.backgroundColor);
+            };
+        };
+    </script>
+</head>
+<body>
+    <button id="btn01">点这里1</button>
+    <button id="btn02">点这里2</button>
+    <br/>
+    <br/>
+    <div id="box1"></div>
+</body>
+</html>

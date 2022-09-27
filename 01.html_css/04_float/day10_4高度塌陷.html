@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 解决高度塌陷问题 -->
+    <style>
+        .outer{
+            border: 10px solid goldenrod;
+            /* 给父元素设置BFC */
+            overflow: hidden;
+        }
+        /* 1 原本父元素的高度是被子元素撑开的 */
+        .inner{
+            width: 100px;
+            height: 100px;
+            background-color: aquamarine;
+            /* 2 设置浮动后，高度塌陷，下面的元素上移，要解决这个问题 */
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="inner"></div>
+    </div>
+    <div style="width: 100px;height: 100px;background-color: rebeccapurple"></div>
+</body>
+</html>

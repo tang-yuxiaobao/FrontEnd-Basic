@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=transform-style: preserve-3d;, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 鼠标移动到图片上，图片自动放大且不从框内溢出 -->
+    <style>
+        .box1{
+            width: 200px;
+            height: 200px;
+            border: 2px solid red;
+            margin: 100px auto;
+            /* 溢出剪裁 */
+            overflow: hidden;
+        }
+        /* 给图片加动画效果 */
+        img{
+            transition: .2s;
+        }
+        .box1:hover img{
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <img src="./img/an.jpg" width="100%">
+    </div>  
+</body>
+</html>

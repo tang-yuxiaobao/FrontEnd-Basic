@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 创建一个Date对象
+        // 直接使用构造函数创建Date对象的话，会封装为 创建对象所在行 的执行时间点
+        var d = new Date();
+
+        // 创建一个指定的日期对象：需要在构造函数中传递一个表示时间的字符串作为参数
+        // 日期格式：月/日/年 时:分:秒
+        var dd = new Date('08/06/2022 11:14:59')
+
+        var date = dd.getDate();
+
+        console.log(date);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

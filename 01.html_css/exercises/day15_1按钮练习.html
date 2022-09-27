@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 未点击鼠标时的状态 *//* 设置背景图片 *//* 行内元素不能设置宽高，所以 */
+        /* a:link{            
+            display: block;
+            width: 93px;
+            height: 29px;            
+            background-image: url('./img/day15/link.png');
+        } */
+
+        /* 鼠标移入的状态 */
+        /* a:hover{
+            background-image: url('./img/day15/hover.png');
+        }
+        a:active{
+            background-image: url('./img/day15/active.png');
+        } */
+
+        /* 解决办法 */
+        a:link{
+            display: block;
+            width: 93px;
+            height: 29px;
+            background-image: url('./img/day15/btn.png');
+        }
+        a:hover{
+            background-image: url('./img/day15/btn.png');
+            background-position: -93px 0;
+        }
+        a:active{
+            background-image: url('./img/day15/btn.png');
+            background-position: -186px 0;
+        }
+    </style>
+</head>
+<body>
+    <a href="javascript:;"></a>
+</body>
+</html>

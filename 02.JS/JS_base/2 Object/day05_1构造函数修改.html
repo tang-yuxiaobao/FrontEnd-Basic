@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        创建一个Person构造函数
+     -->
+    <script>
+        // 创建一个Person构造函数
+        function Person(name, age, gender){
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+        }
+
+        // 在原型中添加一个sayName方法
+        Person.prototype.sayName = function(){
+            alert('Hello everyone, my name is'+this.name);
+        };
+
+        // 创建一个Person实例
+        var per1 = new Person('Mike',18,'man');
+        var per2 = new Person('Cindy',15,'woman');
+
+        per2.sayName();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

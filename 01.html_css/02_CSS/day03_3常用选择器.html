@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        记住每种选择器的格式
+        1 将所有段落设置为红色
+        2 将最后半句设置为紫色
+        3 将标题设置为蓝色
+        4 将第一个半句和最后半句设置相同的class属性
+        5 试一下通配选择器
+
+        心得：通配选择器的等级好像最低
+     -->
+    <style>
+        /* 1 */
+        p{
+            color: red;
+        }
+        /* 2 */
+        #last{
+            color: purple;
+        }
+        /* 3 */
+        .h{
+            color: blue;
+        }
+        /* 5 */
+        /* *{
+            color: green;
+        } */
+    </style>
+</head>
+<body>
+    <h1 class="h">十一月四日风雨大作</h1>
+    <!-- 4 -->
+    <h2 class="h same">陆游</h2>
+    <p>僵卧孤村不自哀，</p>
+    <p>尚思为国戍轮台。</p>
+    <p>夜阑卧听风吹雨，</p>
+    <!-- 4 -->
+    <p id="last" class="same">铁马冰河入梦来。</p>
+</body>
+</html>

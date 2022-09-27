@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1 {
+            width: 100px;
+            height: 100px;
+            background-color: blueviolet;
+        }
+    </style>
+
+    <script>
+        window.onload = function(){
+            // 1 事件绑定给document
+            document.onkeydown = function(event){
+                // event可以知道此时按的是谁
+                event = event || window.event;
+
+                // 判断y和ctrl是否同时被按下
+                if(event.key==='y' && event.ctrlKey){
+                    console.log(1);
+                }
+                
+            };
+            document.onkeyup = function(){
+
+            };
+
+            // 2 给input绑定
+            var input = document.getElementsByTagName('input')[0];
+            input.onkeydown = function(event){
+                event = event || window.event;
+
+                // 使文本框中不能输入数字
+                // if(/[0-9]/.test(event.key)){
+                if(event.key >= '0' && event.key <= '9'){
+                    return false;
+                }
+                
+            };
+        };
+    </script>
+</head>
+<body>
+    <input type="text" />
+</body>
+</html>

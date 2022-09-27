@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        1 引入一个音频文件
+        2 允许用户控制播放某音频文件
+        3 允许自动播放某音频文件
+        4 设置某音频循环播放
+        5 通过source标签指定文件路径
+        6 在浏览器识别不出音频时给出提示
+        7 避免掉 不同浏览器支持不同音频格式 的情况（更严谨一些）
+        8 成功使用embed标签播放音频
+     -->
+    <audio src="./source/audio.mp3">1 此时显示不出来</audio>
+    <audio src="./source/audio.mp3" controls> 2 此时用户可以控制播放音频文件了</audio>
+    <!-- <audio src="./source/audio.mp3" controls autoplay>3 音频可以自动播放了</audio> -->
+    <!-- <audio src="./source/audio.mp3" controls autoplay loop></audio> -->
+    <audio controls>
+        <!-- 会优先识别上面的音频 -->
+        当前浏览器版本不支持播放该音频，请升级浏览器后再试  <!-- 6 -->
+        <!-- 4 -->
+        <source src="./source/audio.mp3">
+        <!-- 7 -->
+        <source src="./source/audio.ogg">
+        <!-- 8 谷歌似乎不兼容embed -->
+        <embed src="./source/audio.mp3" type="audio/mp3" width="300" height="500">
+    </audio>
+    <!-- 
+        9 通过source引入一个视频文件
+        10 成功使用embed标签播放音频
+        11 调用其他视频浏览器的视频
+     -->
+    <video controls>
+        <!-- 9 -->
+        <!-- <source src="./source/flower.webm"> -->
+        <!-- 10 谷歌好像加载不出来 -->
+        <embed src="./source/flower.mp4" type="video/mp4">
+    </video>
+    <br>
+    <!-- 11 -->
+    <iframe height=500 width=800 src='https://player.youku.com/embed/XNTIwMjUxNjU2NA==' frameborder=0 'allowfullscreen'></iframe>
+</body>
+</html>

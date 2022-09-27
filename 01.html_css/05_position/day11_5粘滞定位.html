@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <style>
+        body{
+            height: 1000px;
+        }
+        .nav{
+            width: 1210px;
+            height: 48px;
+            background-color: #e8e7e3;
+            margin: 50px auto;
+            /* 粘滞定位 */
+            position: sticky;
+            top: 0%;
+        }
+        .nav li{
+            float: left;
+            /* 使文字在父元素中居中 */
+            line-height: 48px;
+        }
+        .nav a{
+            /* 将a变成块元素，会继承其父元素的行高 */
+            display: block;
+            text-decoration: none;
+            color: #777;
+            /* background-color: aqua; */
+            font-size: 18px;
+            padding: 0 39px;
+        }
+        .nav li:last-child a{
+            padding: 0 43px 0 41px;
+        }
+        /* 设置鼠标移入的效果 */
+        .nav a:hover{
+            background-color: #3F3F3F;
+            color: #e8e7e3;
+        }
+    </style>
+</head>
+<body>
+    <ul class="nav">
+        <li><a href="#">HTML/CSS</a></li>
+        <li><a href="#">Browser Side</a></li>
+        <li><a href="#">Server Side</a></li>
+        <li><a href="#">Programming</a></li>
+        <li><a href="#">XML</a></li>
+        <li><a href="#">Web Building</a></li>
+        <li><a href="#">Reference</a></li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        1 练习轮廓
+        2 练习阴影
+        3 分别练习1 2 3 4位数的圆角，画圆
+     -->
+    <style>
+        .box1{
+            width: 100px;
+            height: 100px;
+            background-color: blueviolet;
+            /* 1 */
+            outline: 10px solid red;
+            /* 2 模糊量越大越模糊 */
+            box-shadow: 20px 20px 3px grey;
+        }
+        .box2{
+            width: 100px;
+            height: 100px;
+            background-color: rgb(193, 157, 226);
+            /* 3 */
+            border-radius: 50%;
+        }
+        .box3{
+            width: 300px;
+            height: 300px;
+            background-color: rgb(139, 100, 174);
+            /* 3 */
+            /* border-radius: 50px; */
+            /* border-radius: 20px 60px; */
+            /* border-radius: 10px 50px 100px; */
+            /* 4个值：顺时针 */
+            border-radius: 10px 20px 40px 80px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">1</div>
+    hhh
+    <div class="box2">2</div>
+    <div class="box3">3</div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        设计一个盒子的雏形，设置：
+        1 背景颜色
+        2 使盒子可见（内容区）
+        3 设置边框
+     -->
+    <style>
+        .box1{
+            /* 1 此时只设置了颜色，但是浏览器上看不到 */
+            background-color: coral;
+            /* 2 设置了内容区的宽高，元素才会被内容撑开 */
+            height: 200px;
+            width:200px;
+            /* 3 宽度、颜色、样式*/
+            border-width: 10px;
+            border-color: rgb(238, 203, 150);
+            border-style: dotted;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+</body>
+</html>

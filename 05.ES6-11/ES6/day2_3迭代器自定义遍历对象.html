@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自定义遍历数据</title>
+</head>
+
+<body>
+    <script>
+        //声明一个对象
+        const banji = {
+            name: "终极一班",
+            stus: [
+                'xiaoming',
+                'xiaoning',
+                'xiaotian',
+                'knight'
+            ],
+            // 在该对象里创建 iterator 对象，让对象可以使用 for of 遍历数组
+            [Symbol.iterator]() {
+                // 索引变量
+                let index = 0;
+                //
+                let _this = this;
+                // 因为iterator接口的原理中首先要创建一个指针对象，所以这里return一个对象
+                return {
+                    // 补充next方法
+                    next: function () {
+                        if (index < _this.stus.length) {  // this是当前的对象，_this是上级对象
+                            // value为当前下标成员的值
+                            const result = { value: _this.stus[index], done: false };
+                            //下标自增
+                            index++;
+                            //返回结果
+                            return result;
+                        }else{
+                            // 每调用 next() 返回一个包含 value 和 done 属性的对象
+                            return {value: undefined, done: true};
+                        }
+                    }
+                };
+            }
+        }
+
+        //遍历这个对象 
+        for (let v of banji) {
+            console.log(v);
+        }
+    </script>
+</body>
+
+</html>

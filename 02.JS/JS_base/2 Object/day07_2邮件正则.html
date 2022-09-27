@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            hello               .nihao          @       abc                  .com.cn
+            任意数字、下划线    .任意数字、下划线   @   任意字母、数字  .任意字母（2-5位）.任意字母（2-5位）
+            \w{3,}              (\.\w+)*        @      [A-z0-9]+         (\.[A-z]{2,5}){1,2}
+
+            + 至少1次；*可有可无
+        */
+        // 限制开头和结尾：要求其必须是一个完整的邮件   
+        var emailReg = /^\w{3,}(\.\w+)*@[A-z0-9]+(\.[A-z]{2,5}){1,2}$/;
+        var email = 'abc.hh@123.com ahh';
+        console.log(emailReg.test(email));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

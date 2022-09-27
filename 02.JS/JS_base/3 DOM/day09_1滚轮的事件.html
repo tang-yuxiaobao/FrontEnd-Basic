@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1 {
+            width: 100px;
+            height: 100px;
+            background-color: blueviolet;
+        }
+    </style>
+
+    <script>
+        // 向上滚动，box1变短；向下 变长
+        window.onload = function () {
+            // 获取box1的div
+            var box1 = document.getElementById('box1');
+            // 绑定滚轮滚动事件
+            box1.onwheel = function(event){
+                event = event || event.window;
+                // 判断滚轮滚动的方向
+                if(event.deltaY > 0){
+                    // 可见高度-10px
+                    box1.style.height = box1.clientHeight - 10 + 'px';
+                }else{
+                    box1.style.height = box1.clientHeight + 10 + 'px';
+                }
+                // 取消默认行为
+                return false;
+            };
+        };
+    </script>
+</head>
+
+<body style="height: 2000px;">
+    <div id="box1"></div>
+</body>
+
+</html>

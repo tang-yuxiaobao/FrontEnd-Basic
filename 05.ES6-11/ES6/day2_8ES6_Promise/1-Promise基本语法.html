@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise基本语法</title>
+</head>
+<body>
+    <script>
+        //实例化 Promise 对象
+        const p = new Promise(function(resolve, reject){
+            setTimeout(function(){
+                let data = '数据库中的用户数据';
+                // 调用resolve函数之后，Promise对象p的状态为“成功”，成功后可以调用对象p的then方法的第一个回调函数
+                resolve(data);
+
+                let err = '数据读取失败';
+                // 调用reject函数之后，Promise对象p的状态为“失败”，失败后调用对象p的then方法的第二个回调函数
+                reject(err);
+            }, 1000);
+        });
+
+        //调用 promise 对象的 then 方法。2个参数皆为函数类型
+        p.then(function(value){  // 成功的形参叫value
+            console.log(value);
+        }, function(reason){  // 失败的形参叫reason
+            console.error(reason);
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <h2>{{info}}</h2>
+        <button @click="switching">Switch</button>
+    </div>
+</body>
+<script>
+    Vue.config.productionTip = false;
+
+    const vm = new Vue({
+        el: '#root',
+        data: {
+            isHot: true,
+        },
+        // 计算属性
+        computed: {
+            info() {
+                return this.isHot ? 'hot' : 'cold';
+            }
+        },
+        // 事件
+        methods: {
+            switching() {
+                this.isHot = !this.isHot;
+            }
+        },
+        // 监视属性
+        // watch:{
+        //     isHot:{  /* 监视谁 */
+        //         immediate:true,  /* 初始化时让handler调用一下 */
+        //         // 当监视的目标发生改变时，调用handler
+        //         handler(newValue,oldValue){
+        //             console.log('ishot已被修改', newValue, oldValue);
+        //         }
+        //     }
+        // }
+    });
+
+    vm.$watch('isHot', {
+        immediate: true,
+        handler(newValue, oldValue) {
+            console.log('ishot已被修改', newValue, oldValue);
+        }
+    })
+</script>
+
+</html>

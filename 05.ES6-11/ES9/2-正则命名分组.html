@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正则扩展-命名捕获分组</title>
+</head>
+
+<body>
+    <script>
+        // 1 在没有命名捕获分组情况下的处理
+        //声明一个字符串
+        // let str = '<a href="http://www.atguigu.com">尚硅谷</a>';
+
+        // //提取 url 与 『标签文本』
+        // const reg = /<a href="(.*)">(.*)<\/a>/;
+
+        // //执行
+        // const result = reg.exec(str);
+
+        // console.log(result);
+        // // console.log(result[0]);  // str的值
+        // // console.log(result[1]);  // 第一个*匹配到的内容：http://www.atguigu.com
+        // // console.log(result[2]);  // 第二个*匹配到的内容：尚硅谷
+
+        
+        let str = '<a href="http://www.atguigu.com">尚硅谷</a>';
+        //分组命名
+        const reg = /<a href="(?<url>.*)">(?<text>.*)<\/a>/;  // 这样做可以添加一个groups属性
+
+        const result = reg.exec(str);
+
+        console.log(result.groups.url);  // http://www.atguigu.com
+
+        console.log(result.groups.text);  // 尚硅谷
+    </script>
+</body>
+
+</html>

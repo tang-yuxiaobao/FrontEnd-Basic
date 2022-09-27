@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        1 设置不同字体大小的垂直居中
+        2 设置水平居中
+        3 去掉p标签的图片和边框的间隙
+     -->
+    <style>
+        p{
+            width: 450px;
+            border: 1px red solid;
+            text-align: right;
+        }
+        div{
+            border: 1px solid red;
+            font-size: 20px;
+            /* 2 */
+            text-align: center;
+        }
+        div span{
+            border: 1px purple double;
+            font-size: 5px;
+            color: red;
+            /* 1 */
+            vertical-align: middle;
+        }
+        nav img{
+            border: 1px solid;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <p>党的十八大以来，以习近平同志为核心的党中央以巨大的政治勇气、强烈的责任担当，引领党不断加强革命性锻造，开辟了百年大党自我革命新境界。</p>
+    <div>“不断增强党<span>自我净化、自我完善、自我革新、自我提高</span>的能力”</div>
+    <br>
+    <nav><img src="../exercises/img/day08/1.jpeg" alt=""></nav>
+</body>
+</html>

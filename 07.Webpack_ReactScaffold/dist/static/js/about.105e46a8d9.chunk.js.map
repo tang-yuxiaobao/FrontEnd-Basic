@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/about.105e46a8d9.chunk.js","mappings":"0LAGe,SAASA,IACpB,OAAO,sCACV,C","sources":["webpack://07_1.react_scaffold/./src/pages/About/index.jsx"],"sourcesContent":["// 前端路由的测试代码\r\nimport React from \"react\";\r\n\r\nexport default function About(){\r\n    return <h1>About!~~~</h1>;\r\n}"],"names":["About"],"sourceRoot":""}
